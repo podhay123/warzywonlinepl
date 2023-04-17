@@ -11,7 +11,10 @@ def login_user(request):
         if user is not None:
             login(request, user)
             return redirect("index")
+
+            # return render(request, "main\\templates\\main\\index.html")
         else:
             messages.success(request, ("There Was An Error Loggin In, Try Again"))
+            return redirect("login")
     else:
-        return render(request, "users/authentication/login.html")
+        return render(request, "users/authentication/login.html", {})
