@@ -6,19 +6,51 @@
     <meta chatset="utf-8" />
     <title>WARZYWONLINE</title>
     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+    {% block head %}
 
+    {% endblock %}
     <link rel="stylesheet" href="{%static 'main\style.css'%}?{% now 'U' %}">
 </head>
 
 <body>
+    <header id="main_header">
+        <a href="http://127.0.0.1:8000">
+            <h1>warzywOnline</h1>
+        </a>
+        <!-- przekierowywuje do strony głównej -->
+        <nav>
+            <ol class="main_list">
+                <li><a href="http://127.0.0.1:8000/users/login_user">Zaloguj</a></li>
+                <!-- po zalogowaniu zmienia się w "Konto" -->
 
+                <li><a href="#">Produkty</a>
+                    <ul>
+                        <li><a href="#">Warzywa</a></li>
+                        <li><a href="#">Owoce</a></li>
+                        <li><a href="#">Zborza</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"></a>
+                </li>
+                <li><a href="#"></a>
+                </li>
+            </ol>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main class="main_content">
         {% block content %}
 
         {% endblock %}
-    </div>
+        </div>
 
+        <footer class="main_footer">
+            <div class="footer_info">Warzywonline</div>
+            <div class="footer_info">Jakub Podhajski & Oskar Fryc</div>
+            <div class="footer_info">Słoniowa 17/4</div>
+            <div class="footer_info">35-112, Rezszów</div>
+            <div class="footer_info">Wszelkie prawa zastrzeżone ©</div>
+        </footer>
 
 </body>
 
