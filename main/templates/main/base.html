@@ -14,13 +14,13 @@
 
 <body>
     <header id="main_header">
-        <a href="http://127.0.0.1:8000">
+        <a href="{% url 'main:main' %}">
             <h1>warzywOnline</h1>
         </a>
         <!-- przekierowywuje do strony głównej -->
         <nav>
             <ol class="main_list">
-                <li><a href="http://127.0.0.1:8000/users/login_user">Zaloguj</a></li>
+                <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
                 <!-- po zalogowaniu zmienia się w "Konto" -->
 
                 <li><a href="#">Produkty</a>
