@@ -10,11 +10,10 @@ def login_user(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect("index")
-
-            # return render(request, "main\\templates\\main\\index.html")
+            return redirect("main:main")
         else:
-            messages.success(request, ("There Was An Error Loggin In, Try Again"))
-            return redirect("login")
+            messages.success(request, ("There Was An Error Logging In, Try Again..."))
+            return redirect("users:login")
+
     else:
-        return render(request, "users/authentication/login.html", {})
+        return render(request, "users/authenticate/login.html", {})
