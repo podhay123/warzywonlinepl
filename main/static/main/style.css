@@ -1,0 +1,22 @@
+.wrapper {
+    width: 100%;
+}
+
+.main_header {
+    width: 100%;
+}
+
+.logo {
+    display: inline-block;
+    width: 300px;
+    font-size: 25px;
+
+}
+
+.header_nav {
+    display: inline-block;
+}
+
+.main_list>li {
+    display: inline-block;
+}
