@@ -38,32 +38,25 @@
             </nav>
         </header>
 
+
         <main class="main_content">
+            {% if messages %}
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+            {% endif %}
             {% block content %}
 
-<<<<<<< HEAD
             {% endblock %}
     </div>
-=======
-    <main class="main_content">
-        {% if messages %}
-        {% for message in messages %}
-        {{ message }}
-        {% endfor %}
-        {% endif %}
-        {% block content %}
 
-        {% endblock %}
-        </div>
-
-        <footer class="main_footer">
-            <div class="footer_info">Warzywonline</div>
-            <div class="footer_info">Jakub Podhajski & Oskar Fryc</div>
-            <div class="footer_info">Słoniowa 17/4</div>
-            <div class="footer_info">35-112, Rezszów</div>
-            <div class="footer_info">Wszelkie prawa zastrzeżone ©</div>
-        </footer>
->>>>>>> ed14b1d168c7930e10434683fecf2732b8dad798
+    <footer class="main_footer">
+        <div class="footer_info">Warzywonline</div>
+        <div class="footer_info">Jakub Podhajski & Oskar Fryc</div>
+        <div class="footer_info">Słoniowa 17/4</div>
+        <div class="footer_info">35-112, Rezszów</div>
+        <div class="footer_info">Wszelkie prawa zastrzeżone ©</div>
+    </footer>
 
     <footer class="main_footer">
         <div class="footer_info">Warzywonline</div>
