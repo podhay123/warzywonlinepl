@@ -31,10 +31,25 @@
 .main_list>li {
     display: inline-block;
     background-color: white;
-
+    width: 150px;
+    height: 40px;
+    text-align: center;
 }
 
 .main_list a {
     text-decoration: none;
     color: green;
+}
+
+.main_list>li>ul {
+    display: none;
+}
+
+.main_list>li:hover>ul {
+    display: block;
+}
+
+.main_list>li>ul>li {
+    position: relative;
+    z-index: 100;
 }
