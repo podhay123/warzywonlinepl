@@ -38,3 +38,67 @@
     text-decoration: none;
     color: green;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    width: 100vw;
+    display: block;
+    overflow: hidden;
+    padding: 70px 0;
+    box-sizing: border-box;
+    background-color: #18181a;
+}
+
+.inner_footer {
+    display: block;
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+}
+
+.inner_footer .logo_container {
+    width: 35%;
+    float: left;
+    display: block;
+}
+
+.inner_footer .logo_container img {
+    width: 65px;
+    height: auto;
+}
+
+.inner_footer .footer_third {
+    width: calc(21.66666666666667% - 20px);
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+
+}
+
+.inner_footer .footer_third:last-child {
+    margin-right: 0;
+}
+
+.inner_footer .footer_third h1 {
+    font-family: 'arial';
+    font-size: 22px;
+    color: white;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
