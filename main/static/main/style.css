@@ -11,10 +11,14 @@
 
 .main_header {
     width: 100%;
+    /* text-align: center; */
 }
 
 .logo {
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
     display: inline-block;
+    color: green;
     width: 300px;
     font-size: 25px;
 
@@ -26,13 +30,11 @@
 
 .main_list>li {
     display: inline-block;
+    background-color: white;
+
 }
 
-.footer_info {
-    font-size: 20px;
-    text-align: center;
-    width: 100%;
-    height: 350px;
-    background-color: green;
-    color: white;
+.main_list a {
+    text-decoration: none;
+    color: green;
 }

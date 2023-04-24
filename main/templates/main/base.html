@@ -10,24 +10,22 @@
 
     {% endblock %}
     <link rel="stylesheet" href="{%static 'main\style.css'%}?{% now 'U' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
+
 
 <body>
     <div class="wrapper">
-        <header id="main_header">
+        <header class="main_header">
             <a class="logo" href="{% url 'main:main' %}">
                 <h1>warzywOnline</h1>
             </a>
-            <!-- przekierowywuje do strony głównej -->
+            <!-- pasek wyszukiwania -->
             <nav class="header_nav">
                 <ol class="main_list">
-                    {% if user.is_authenticated %}
-                    <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
-
-                    {% else %}
-                    <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
-                    {% endif %}
-                    <!-- po zalogowaniu zmienia się w "Konto" -->
                     <li><a href="#">Produkty</a>
                         <ul>
                             <li><a href="#">Warzywa</a></li>
@@ -35,6 +33,14 @@
                             <li><a href="#">Zborza</a></li>
                         </ul>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
+
+                    {% else %}
+                    <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
+                    {% endif %}
+                    <!-- po zalogowaniu zmienia się w "Konto" -->
+
                     <li><a href="#"></a>
                     </li>
                     <li><a href="#"></a>
