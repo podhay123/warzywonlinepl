@@ -25,9 +25,7 @@ class Product(models.Model):
 class Opinion(models.Model):
     description = models.CharField(max_length=200)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     stars = models.IntegerField(
         validators=[MaxValueValidator(10), MinValueValidator(0)]
     )
-
-    def __str__(self) -> str:
-        return "user: " + self.name + "\n" + "description: " + self.description
