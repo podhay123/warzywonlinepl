@@ -40,6 +40,11 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
+                {% else %}
+                <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
+                <li><a href="{% url 'users:register' %}">Zarejestruj</a></li>
+                {% endif %}
+                <!-- po zalogowaniu zmienia się w "Konto" -->
 
                 {% else %}
                 <li><a href="{% url 'users:login' %}">Zaloguj</a></li>

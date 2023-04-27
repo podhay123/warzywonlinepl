@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% if form.errors %}
+<p>Wystąpił bład</p>
+{% endif %}
+<h1>Zarejestruj</h1>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-secondary">
+</form>
+{% endblock %}
