@@ -22,85 +22,85 @@
 
 
 <body>
-    <div class="wrapper">
-        <header class="main_header">
-            <a class="logo" href="{% url 'main:main' %}">
-                <h1>warzywOnline</h1>
-            </a>
+    <header class="main_header">
 
-            <!-- pasek wyszukiwania -->
-            <nav class="header_nav">
-                <ol class="main_list">
-                    <li><a href="#">Produkty</a>
-                        <ul>
-                            <li><a href="#">Warzywa</a></li>
-                            <li><a href="#">Owoce</a></li>
-                            <li><a href="#">Zborza</a></li>
-                        </ul>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
+        <a class="header_logo" href="{% url 'main:main' %}">
+            <h1>warzywOnline</h1>
+        </a>
 
-                    {% else %}
-                    <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
-                    <li><a href="{% url 'users:register' %}">Zarejestruj</a></li>
-                    {% endif %}
-                    <!-- po zalogowaniu zmienia się w "Konto" -->
+        <!-- pasek wyszukiwania -->
+        <nav class="header_nav">
+            <ol class="main_list">
+                <li><a href="#">Produkty</a>
+                    <ul>
+                        <li><a href="#">Warzywa</a></li>
+                        <li><a href="#">Owoce</a></li>
+                        <li><a href="#">Zborza</a></li>
+                    </ul>
+                </li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
+                {% else %}
+                <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
+                <li><a href="{% url 'users:register' %}">Zarejestruj</a></li>
+                {% endif %}
+                <!-- po zalogowaniu zmienia się w "Konto" -->
 
-                    <li><a href="#"></a>
-                    </li>
-                    <li><a href="#"></a>
-                    </li>
-                </ol>
-            </nav>
-            <div style="clear: both"></div>
-        </header>
+                {% else %}
+                <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
+                {% endif %}
+
+                <li><a href="#">xxxx</a>
+                </li>
+                <li><a href="#"></a>
+                </li>
+            </ol>
+        </nav>
+        <div style="clear: both"></div>
+    </header>
 
 
-        <main class="main_content">
-            {% if messages %}
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-            {% endif %}
-            {% block content %}
+    <main class="main_content">
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        {% endif %}
+        {% block content %}
 
-            {% endblock %}
-    </div>
+        {% endblock %}
 
-    <footer>
-        <div class="footer">
-            <div class="inner_footer">
-                <div class="logo_container">
-                    <img src="{% static 'main/img/carrot.png' %}">
-                </div>
-                <div class="footer_third">
-                    <h1>Potrzebujesz Pomocy?</h1>
-                    <a href="#">Zasady &amp Warunki</a>
-                    <a href="#">Polityka Prywatności</a>
-                </div>
-                <div class="footer_third">
-                    <h1>O nas</h1>
-                    <a href="#">Nasze Cv</a>
-                    <a href="#">Lorem Ipsum</a>
-                </div>
-                <div class="footer_third">
-                    <h1>Zostaw Followa</h1>
-                    <li><a href="https://github.com/podhay123"><i class="fa fa-github"></i></a></li>
-                    <li><a href="https://github.com/raksOtoOskar"><i class="fa fa-github"></i></a></li>
-                    <span>
-                        Warzywonline<br>
-                        Jakub Podhajski & Oskar Fryc<br>
-                        Słoniowa 17/4<br>
-                        35-112, Rezszów<br>
-                        Wszelkie prawa zastrzeżone ©<br>
-                    </span>
+        <footer>
+            <div class="footer">
+                <div class="inner_footer">
+                    <div class="logo_container">
+                        <img src="{% static 'main/img/carrot.png' %}">
+                    </div>
+                    <div class="footer_third">
+                        <h1>Potrzebujesz Pomocy?</h1>
+                        <a href="#">Zasady &amp Warunki</a>
+                        <a href="#">Polityka Prywatności</a>
+                    </div>
+                    <div class="footer_third">
+                        <h1>O nas</h1>
+                        <a href="#">Nasze Cv</a>
+                        <a href="#">Lorem Ipsum</a>
+                    </div>
+                    <div class="footer_third">
+                        <h1>Zostaw Followa</h1>
+                        <li><a href="https://github.com/podhay123"><i class="fa fa-github"></i></a></li>
+                        <li><a href="https://github.com/raksOtoOskar"><i class="fa fa-github"></i></a></li>
+                        <span>
+                            Warzywonline<br>
+                            Jakub Podhajski & Oskar Fryc<br>
+                            Słoniowa 17/4<br>
+                            35-112, Rezszów<br>
+                            Wszelkie prawa zastrzeżone ©<br>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    </div>
+        </footer>
 </body>
 
 </html>

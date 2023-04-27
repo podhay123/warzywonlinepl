@@ -5,42 +5,52 @@
     text-decoration: none;
 }
 
-.wrapper {
-    width: 100%;
-}
 
 .main_header {
     width: 100%;
-    height: 80 px;
+    height: 80px;
     display: block;
     background-color: white;
     text-align: center;
 }
 
-.logo {
-    font-family: 'Cabin Sketch', cursive;
-    text-decoration: none;
-    color: green;
-    width: 300px;
-    font-size: 25px;
+
+.header_logo {
+    height: 100%;
+    display: table;
     float: left;
+
+}
+
+.header_logo h1 {
+    font-family: 'Cabin Sketch', cursive;
+    color: green;
+    height: 100%;
+    font-size: 50px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 15px;
 }
 
 .header_nav {
-    display: inline-block;
+    text-align: center;
+    height: 100%;
+    display: block;
 }
 
 .main_list>li {
     display: inline-block;
     background-color: white;
     width: 150px;
-    height: 40px;
+    height: 100%;
     text-align: center;
+    padding: 0 20px;
+    vertical-align: middle;
 
 }
 
 .main_list a {
-    text-decoration: none;
+    vertical-align: middle;
     color: green;
 }
 
