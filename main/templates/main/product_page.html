@@ -1,9 +1,10 @@
-{% extends "base.html" %}
+{% extends "main/base.html" %}
 
 {% block content %}
 
-{% for product in products %}
-<!-- pobiera dane z database i wyswietla produkt -->
+{% for product in product %}
+<div> {{product.name}}</div>
+
 {% endfor %}
 
 {% endblock %}
