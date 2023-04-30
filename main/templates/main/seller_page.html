@@ -1,16 +1,24 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
 
-<h1>Login</h1>
+<h1>Co chcesz sprzedać?</h1>
 <br>
 <form action="" method="POST">
     {% csrf_token %}
-    username
-    <input type="text" name="username">
-    password
-    <input type="password" name="password">
 
+    <!-- name
+    <input type="text" name="name">
+    password
+    <input type="password" name="password"> -->
+    {{form.as_p}}
     <input type="submit" value="Submit" class="btn btn-secondary">
+
 </form>
+{% else %}
+<h1>Najpierw musisz się zalogować</h1>
+<a href="{% url 'users:login' %}">Zaloguj</a>
+<a href="{% url 'users:register' %}">Nie masz konta? Zarejestruj się tutaj!</a>
+{%endif%}
 {% endblock %}
