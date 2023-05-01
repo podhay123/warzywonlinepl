@@ -19,6 +19,7 @@
     display: table;
     float: left;
     background-color: aquamarine;
+    width: 400px;
 }
 
 .header_logo_img {
@@ -43,14 +44,15 @@
 }
 
 .main_list>li {
-    display: inline-block;
+    float: left;
     background-color: white;
-    width: 150px;
+    width: calc((23% - 100px));
     height: 100%;
+    font-size: 35px;
     text-align: center;
     padding: 0 20px;
     vertical-align: middle;
-
+    margin-top: 2px
 }
 
 .main_list a {
@@ -71,7 +73,34 @@
     z-index: 100;
 }
 
+.main_list>form>input {
+    margin-top: 2px;
+    width: calc((13% - 100px));
+    height: 40px;
+    transition: width 0.4s ease-in-out;
+    font-size: 20px;
+}
 
+.main_list>form>input:focus {
+    width: calc((18% - 100px));
+}
+
+.main_list>form>button {
+    width: calc((8% - 100px));
+    height: 40px;
+
+}
+
+.login {
+    padding: 10px;
+    width: 25%;
+}
+
+.login>fieldset>input {
+    padding: 15px;
+}
+
+/* nie dziala :C */
 
 
 .footer {

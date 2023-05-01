@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 </head>
 
@@ -42,8 +44,11 @@
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
                 {% else %}
-                <li><a href="{% url 'users:login' %}">Zaloguj</a></li>
-                <li><a href="{% url 'users:register' %}">Zarejestruj</a></li>
+                <li><a href="{% url 'users:login' %}">Zaloguj
+                        <ul>
+                            <li><a href="{% url 'users:register' %}">Zarejestruj</a></li>
+                        </ul>
+                    </a></li>
                 {% endif %}
                 <!-- po zalogowaniu zmienia się w "Konto" -->
 
@@ -53,10 +58,15 @@
                     {% csrf_token %}
 
                     <input placeholder="Szukaj" name="searched">
-                    <button class="submit">lupa</button>
+                    <button class="submit"><span class="material-symbols-outlined">
+                            search
+                        </span> A</button>
+                    <!-- problems with styling button above -->
+                    <!-- try do add some "A" and find out -->
 
                 </form>
                 </li>
+
             </ol>
         </nav>
         <div style="clear: both"></div>

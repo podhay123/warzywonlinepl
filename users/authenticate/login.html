@@ -1,16 +1,25 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+<br><br>
 
-<h1>Login</h1>
-<br>
-<form action="" method="POST">
-    {% csrf_token %}
-    username
-    <input type="text" name="username">
-    password
-    <input type="password" name="password">
+<div class="login">
+    <h1>Login</h1>
 
-    <input type="submit" value="Submit" class="btn btn-secondary">
-</form>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Zaloguj się</legend>
+            username
+            <input type="text" name="username">
+            <br>
+
+            password
+            <input type="password" name="password">
+
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </fieldset>
+    </form>
+</div>
 {% endblock %}
