@@ -14,6 +14,13 @@ def sell(request):
     return render(request, "main/seller_page.html", {"form": form})
 
 
-def product_page(request):
-    product = Product.objects.all()
-    return render(request, "main/product_page.html", {"product": product})
+def all_products(request):
+    products = Product.objects.all()
+
+    return render(request, "main/all_products.html", {"products": products})
+
+
+def product_page(request, pk):
+    product = Product.objects.get(id=pk)
+
+    return render(request, "main/all_products.html", {"product": product})
