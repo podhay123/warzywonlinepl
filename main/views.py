@@ -24,3 +24,19 @@ def product_page(request, pk):
     product = Product.objects.get(id=pk)
 
     return render(request, "main/all_products.html", {"product": product})
+
+
+def search_product(request):
+    if request.method == "POST":
+        searched = request.POST.get("searched")
+        products = Product.objects.filter(name__contains=searched)
+        return render(
+            request,
+            "main/search_product.html",
+            {
+                "searched": searched,
+                "products": products,
+            },
+        )
+    else:
+        return render(request, "main/search_product.html", {})
