@@ -50,8 +50,10 @@
     font-size: 35px;
     text-align: center;
     padding: 0 20px;
+    padding-top: 10px;
     vertical-align: middle;
-    margin-top: 2px
+    margin-top: 2px;
+    position: relative;
 }
 
 .main_list a {
@@ -60,18 +62,20 @@
 }
 
 .main_list>li>ul {
+    position: absolute;
     display: none;
+    font-size: 25px;
 }
 
 .main_list>li:hover>ul {
     display: block;
-    z-index: 100;
+    text-align: center;
+    background-color: white;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
-.main_list>li>ul>li {
 
-    z-index: 100;
-}
 
 .main_list>form>input {
     margin-top: 2px;
