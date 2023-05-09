@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from main.forms import ProductForm
 from main.models import Product
+from django.contrib.auth import authenticate, login
 
 
 # Create your views here.
@@ -10,7 +11,14 @@ def main(request):
 
 def sell(request):
     form = ProductForm
-
+    if request.method == "POST":
+        product = request.POST.get("product")
+        price = request.POST.get("price")
+        quantity = request.POST.get("quantity")
+        print(product)
+        print(price)
+        print(quantity)
+        print("???")
     return render(request, "main/seller_page.html", {"form": form})
 
 
