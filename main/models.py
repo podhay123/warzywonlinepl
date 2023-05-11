@@ -4,6 +4,7 @@ from django.conf import settings
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+
 # Create your models here.
 
 
@@ -33,7 +34,7 @@ class Opinion(models.Model):
 
 
 class ProductToSell(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     price = models.IntegerField(
         validators=[MaxValueValidator(99999), MinValueValidator(1)]
     )
@@ -44,10 +45,15 @@ class ProductToSell(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_products = models.ManyToManyField(ProductToSell, blank=True) # to tak działa XD?
+    user_products = models.ManyToManyField(
+        ProductToSell, blank=True
+    )  # to tak działa XD?
+
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
+
 # null=True blank=True????
