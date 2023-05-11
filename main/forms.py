@@ -1,9 +1,9 @@
 from django import forms
 from django.forms import ModelForm
-from main.models import Product
+from main.models import ProductToSell
 
 
 class ProductForm(ModelForm):
     class Meta:
-        model = Product
+        model = ProductToSell
         fields = "__all__"

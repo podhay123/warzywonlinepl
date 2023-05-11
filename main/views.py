@@ -1,17 +1,35 @@
 from django.shortcuts import render
 from main.forms import ProductForm
+<<<<<<< HEAD
 from main.models import Product, ProductToSell
 
 
+=======
+from main.models import Product, Profile, ProductToSell
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+>>>>>>> 95e0aa6c37fba1a046a4542694c5d01c62054cb9
 # Create your views here.
 def main(request):
     return render(request, "main/index.html", {})
 
-
+# @login_required(login_ur)
 def sell(request):
     form = ProductForm
+    if request.method == "POST":
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            user_object = User.objects.get(username=request.user.username)
+            user_profile = Profile.objects.get(user=user_object)
+            item.save()
+            user_profile.user_products.add(item)
 
-    return render(request, "main/seller_page.html", {"form": form})
+            print(item)
+        else:
+            print("???")
+    return render(request, "main/seller_page.html", {"form": form} )
 
 
 def all_products(request):
