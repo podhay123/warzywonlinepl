@@ -9,7 +9,8 @@ from django.dispatch import receiver
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
-
+    class Meta:
+        verbose_name_plural = 'Categories'
     def __str__(self) -> str:
         return self.name
 
@@ -44,10 +45,9 @@ class ProductToSell(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    user_products = models.ManyToManyField(ProductToSell, blank=True, null=True) # to tak działa XD?
+    user_products = models.ManyToManyField(ProductToSell, blank=True) # to tak działa XD?
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-# null=True blank=True????

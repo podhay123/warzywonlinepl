@@ -12,18 +12,17 @@ def main(request):
 def sell(request):
     form = ProductForm
     if request.method == "POST":
-        product = request.POST.get("product")
-        price = request.POST.get("price")
-        quantity = request.POST.get("quantity")
-        user_object = User.objects.get(username=request.user.username)
-        user_profile = Profile.objects.get(user=user_object)
-        # ProductToSell(product,price,quantity).save()
-        user_profile.user_products.add(ProductToSell(product,price,quantity))
-        print(user_profile.user_products)
-        print(product)
-        print(price)
-        print(quantity)
-        print("???")
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            user_object = User.objects.get(username=request.user.username)
+            user_profile = Profile.objects.get(user=user_object)
+            item.save()
+            user_profile.user_products.add(item)
+
+            print(item)
+        else:
+            print("???")
     return render(request, "main/seller_page.html", {"form": form} )
 
 
