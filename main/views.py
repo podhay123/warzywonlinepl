@@ -61,11 +61,13 @@ def search_product(request):
 def account(request):
     user_object = User.objects.get(username=request.user.username)
     user_profile = Profile.objects.get(user=user_object)
+    print(user_profile.user_products.all())
     return render(
         request,
         "main/account.html",
         {
             "user": user_object,
             "profile": user_profile,
+            "products": user_profile.user_products.all(),
         },
     )

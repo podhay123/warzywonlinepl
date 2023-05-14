@@ -1,7 +1,10 @@
 {% extends "main/base.html" %}
 
 {% block content %}
+<h1>{{user}}</h1>
+{% for product in products %}
+<p>{{product.product.name}}: quantity-{{product.quantity}}price:{{product.price}}$</p>
 
-{{user.name}}
-
+{%endfor%}
 {% endblock %}
+hehexd
