@@ -1,18 +1,15 @@
 from django.shortcuts import render
 from main.forms import ProductForm
-<<<<<<< HEAD
-from main.models import Product, ProductToSell
-
-
-=======
 from main.models import Product, Profile, ProductToSell
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
->>>>>>> 95e0aa6c37fba1a046a4542694c5d01c62054cb9
+
+
 # Create your views here.
 def main(request):
     return render(request, "main/index.html", {})
+
 
 # @login_required(login_ur)
 def sell(request):
@@ -29,7 +26,7 @@ def sell(request):
             print(item)
         else:
             print("???")
-    return render(request, "main/seller_page.html", {"form": form} )
+    return render(request, "main/seller_page.html", {"form": form})
 
 
 def all_products(request):

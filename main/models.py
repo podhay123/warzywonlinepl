@@ -10,8 +10,10 @@ from django.dispatch import receiver
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
+
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = "Categories"
+
     def __str__(self) -> str:
         return self.name
 
@@ -55,9 +57,6 @@ class Profile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
-<<<<<<< HEAD
 
 
 # null=True blank=True????
-=======
->>>>>>> 95e0aa6c37fba1a046a4542694c5d01c62054cb9
