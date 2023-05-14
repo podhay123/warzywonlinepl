@@ -5,7 +5,9 @@
 <h1>Wyszukales: {{ searched }}</h1>
 <br>
 {% for product in products %}
-{{product }}
+<a href="{% url 'main:product_page' product.id %}" class="btn btn-primary">
+    {{product.name}}
+</a>
 {% endfor %}
 {% else %}
 <h1>Nie wyszukales :C</h1>
