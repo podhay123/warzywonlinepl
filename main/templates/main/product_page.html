@@ -2,10 +2,12 @@
 
 {% block content %}
 
+{% for product in products_to_sell %}
 <div>{{ product.product.name}}
     {{ product.price}}
     {{ product.quantity}}
 </div>
+{% endfor %}
 
 
 {% endblock %}
