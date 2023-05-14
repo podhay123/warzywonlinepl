@@ -45,7 +45,7 @@
 .main_list>li {
     float: left;
     background-color: white;
-    width: calc((23% - 100px));
+    width: calc((19% - 100px));
     height: 100%;
     font-size: 35px;
     text-align: center;

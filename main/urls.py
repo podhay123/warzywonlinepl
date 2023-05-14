@@ -8,4 +8,5 @@ urlpatterns = [
     path("all_products/", views.all_products, name="all_products"),
     path("<int:id>/", views.product_page, name="product_page"),
     path("search_product/", views.search_product, name="search_product"),
+    path("profil", views.account, name="account"),
 ]
