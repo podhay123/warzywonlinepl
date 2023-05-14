@@ -4,9 +4,15 @@ from main.models import Product, Profile, ProductToSell
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2cdc6e9af462467b39e92546922268b282e54877
 # Create your views here.
 def main(request):
     return render(request, "main/index.html", {})
+
 
 # @login_required(login_ur)
 def sell(request):
@@ -23,7 +29,7 @@ def sell(request):
             print(item)
         else:
             print("???")
-    return render(request, "main/seller_page.html", {"form": form} )
+    return render(request, "main/seller_page.html", {"form": form})
 
 
 def all_products(request):
