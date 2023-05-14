@@ -55,3 +55,17 @@ def search_product(request):
         )
     else:
         return render(request, "main/search_product.html", {})
+
+
+@login_required()
+def account(request):
+    user_object = User.objects.get(username=request.user.username)
+    user_profile = Profile.objects.get(user=user_object)
+    return render(
+        request,
+        "main/account.html",
+        {
+            "user": user_object,
+            "profile": user_profile,
+        },
+    )

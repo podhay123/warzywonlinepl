@@ -54,7 +54,7 @@
 
                 <li><a href="{% url 'main:sell' %}">Sprzedaj</a>
                 </li>
-                <li><a>Profil</a></li>
+                <li><a href="{% url 'main:account' %}"> Profil</a></li>
                 <form method="POST" action="{% url 'main:search_product' %}">
                     {% csrf_token %}
 
