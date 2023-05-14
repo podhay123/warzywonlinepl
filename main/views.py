@@ -32,10 +32,10 @@ def all_products(request):
     return render(request, "main/all_products.html", {"products": products})
 
 
-def product_page(request, name):
-    product = Product.objects.get(name=name)
+# def product_page(request, name):
+#     product = Product.objects.get(name=name)
 
-    return render(request, "main/product_page.html", {"product": product})
+#     return render(request, "main/product_page.html", {"product": product})
 
 
 def search_product(request):
