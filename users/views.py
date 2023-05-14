@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 def login_user(request):
+    print("login \n l")
+
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -21,6 +23,7 @@ def login_user(request):
 
 
 def logout_user(request):
+    print("HALO HALO \n HALO HALO HALO")
     logout(request)
     messages.success(request, ("Wylogowano poprawnie!"))
     return redirect("main:main")

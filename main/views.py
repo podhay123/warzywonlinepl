@@ -4,8 +4,11 @@ from main.models import Product, Profile, ProductToSell
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 2cdc6e9af462467b39e92546922268b282e54877
 # Create your views here.
 def main(request):
     return render(request, "main/index.html", {})
@@ -38,7 +41,7 @@ def all_products(request):
 def product_page(request, id):
     product = ProductToSell.objects.get(product_id=id)
 
-    return render(request, "main/product_page.html", {"product": product})
+#     return render(request, "main/product_page.html", {"product": product})
 
 
 def search_product(request):
