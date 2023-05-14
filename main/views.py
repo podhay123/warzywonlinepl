@@ -35,8 +35,10 @@ def all_products(request):
 
 
 def product_page(request, id):
-    product = ProductToSell.objects.get(product_id=id)
-    return render(request, "main/product_page.html", {"product": product})
+    products_to_sell = ProductToSell.objects.filter(product_id=id)
+    return render(
+        request, "main/product_page.html", {"products_to_sell": products_to_sell}
+    )
 
 
 def search_product(request):
