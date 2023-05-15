@@ -44,6 +44,7 @@ class ProductToSell(models.Model):
     quantity = models.IntegerField(
         validators=[MaxValueValidator(999), MinValueValidator(1)]
     )
+    seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 
 class Profile(models.Model):

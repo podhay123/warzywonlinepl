@@ -19,6 +19,7 @@ def sell(request):
             item = form.save(commit=False)
             user_object = User.objects.get(username=request.user.username)
             user_profile = Profile.objects.get(user=user_object)
+            item.seller = user_profile.user
             item.save()
             user_profile.user_products.add(item)
 
@@ -36,8 +37,14 @@ def all_products(request):
 
 def product_page(request, id):
     products_to_sell = ProductToSell.objects.filter(product_id=id)
+    name = products_to_sell[0].product.name
     return render(
-        request, "main/product_page.html", {"products_to_sell": products_to_sell}
+        request,
+        "main/product_page.html",
+        {
+            "products_to_sell": products_to_sell,
+            "name": name,
+        },
     )
 
 
