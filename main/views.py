@@ -37,7 +37,10 @@ def all_products(request):
 
 def product_page(request, id):
     products_to_sell = ProductToSell.objects.filter(product_id=id)
-    name = products_to_sell[0].product.name
+    try:
+        name = products_to_sell[0].product.name
+    except:
+        name = "Brak ofert wybranego produktu"
     return render(
         request,
         "main/product_page.html",
