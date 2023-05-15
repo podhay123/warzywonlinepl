@@ -22,6 +22,7 @@ class Product(models.Model):
     name = models.CharField(max_length=20)
     category = models.ManyToManyField(Category)
     # seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    slug = models.SlugField(default="", null=False)
 
     def __str__(self) -> str:
         return self.name

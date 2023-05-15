@@ -35,8 +35,9 @@ def all_products(request):
     return render(request, "main/all_products.html", {"products": products})
 
 
-def product_page(request, id):
-    products_to_sell = ProductToSell.objects.filter(product_id=id)
+def product_page(request, slug):
+    product_id = Product.objects.get(slug=slug).id
+    products_to_sell = ProductToSell.objects.filter(product=product_id)
     try:
         name = products_to_sell[0].product.name
     except:
