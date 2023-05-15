@@ -1,12 +1,37 @@
 {% extends "main/base.html" %}
 
 {% block content %}
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<br>
+<center>
+    <h1 style="font-size: 50px;">{{name}}</h1>
 
-{% for product in products_to_sell %}
-<div>{{ product.product.name}}
-    {{ product.price}}
-    {{ product.quantity}}
-</div>
+    <table style="font-size: 25px;" width="50%">
+        <tr>
+            <th>Sprzedawca</th>
+            <th>Ocena</th>
+            <th>Max.Ilosc</th>
+            <th>Cena</th>
+            <th>KUP</th>
+        </tr>
+        {% for product in products_to_sell %}
+        <div>
+            <th>{{ product.seller}}</th>
+            <th></th>
+            <th>{{ product.quantity}}</th>
+            <th>{{ product.price}}</th>
+            <th>KUP</th>
+
+        </div>
+    </table>
+</center>
 {% endfor %}
 
 
