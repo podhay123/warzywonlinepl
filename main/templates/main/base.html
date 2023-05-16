@@ -35,11 +35,6 @@
         <nav class="header_nav">
             <ol class="main_list">
                 <li><a href="{% url 'main:all_products' %}">Produkty</a>
-                    <ul>
-                        <li><a href="#">Warzywa</a></li>
-                        <li><a href="#">Owoce</a></li>
-                        <li><a href="#">Zboża</a></li>
-                    </ul>
                 </li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'users:logout' %}">Wyloguj</a></li>
