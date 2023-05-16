@@ -4,7 +4,7 @@
 
 {% for product in products %}
 
-<a href="{% url 'main:product_page' product.slug %}" class="btn btn-primary">
+<a href="{% url 'main:product_page' product.name %}" class="btn btn-primary">
     {{product.name}}
 </a>
 
