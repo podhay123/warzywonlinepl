@@ -10,4 +10,10 @@
 
 {% endfor %}
 
+{% for category in categories %}
+<a href="{% url 'main:products_category' category %}" class="btn btn-primary">
+    {{category}}
+</a>
+{% endfor %}
+
 {% endblock %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from main.forms import ProductForm
-from main.models import Product, Profile, ProductToSell
+from main.models import Product, Profile, ProductToSell, Category
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
@@ -30,15 +30,22 @@ def sell(request):
 
 
 def all_products(request):
+    categories = Category.objects.all()
     products = Product.objects.all()
 
-    return render(request, "main/all_products.html", {"products": products})
+    return render(request, "main/all_products.html", {"products": products, "categories": categories})
+
+
+def products_category(request, category):
+    categories = Category.objects.all()
+    products = Product.objects.filter(category__name=category)
+
+    return render(request, "main/all_products.html", {"products": products, "categories": categories})
 
 
 def product_page(request, name):
 
-    product_id = Product.objects.get(name=name).id
-    products_to_sell = ProductToSell.objects.filter(product=product_id)
+    products_to_sell = ProductToSell.objects.filter(product__name=name)
     
     try:
         name = products_to_sell[0].product.name

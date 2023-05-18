@@ -2,7 +2,7 @@ from django.contrib import admin
 from main.models import *
 from django.contrib.auth.admin import UserAdmin
 
-admin.site.register([Category, Opinion, ProductToSell])
+admin.site.register([Category, Opinion, ProductToSell, Product])
 
 
 class ProfileInLine(admin.StackedInline):
