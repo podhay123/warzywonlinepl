@@ -6,4 +6,4 @@ from main.models import ProductToSell
 class ProductForm(ModelForm):
     class Meta:
         model = ProductToSell
-        fields = "__all__"
+        fields = ("product", "price", "quantity")

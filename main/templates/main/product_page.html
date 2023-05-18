@@ -24,17 +24,15 @@
         </tr>
         {% endif %}
         {% for product in products_to_sell %}
-        <div>
+        <tr>
             <th>{{ product.seller}}</th>
             <th></th>
             <th>{{ product.quantity}}</th>
             <th>{{ product.price}}</th>
             <th>KUP</th>
+        </tr>
+        {% endfor %}
 
-        </div>
     </table>
 </center>
-{% endfor %}
-
-
 {% endblock %}
